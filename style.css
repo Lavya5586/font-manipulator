@@ -12,7 +12,7 @@
 
 .copy_right_footer {
     position: fixed;
-    color: limegreen;
+    color: cyan;
     bottom: 0px;
     width: 100%;
     background-color: black;
@@ -21,7 +21,7 @@
 }
 
 canvas {
-    border: 10px solid cyan;
+    border: 10px solid rgb(0, 17, 255);
     border-radius: 20px;
     box-shadow: 5px 5px 5px lime;
 }
