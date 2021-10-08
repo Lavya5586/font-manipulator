@@ -4,27 +4,23 @@ difference = 0;
 rightWristX = 0;
 leftWristX = 0;
 
-function setup()
-{
+function setup() {
     video = createCapture(VIDEO);
     video.size(550, 500);
 
     canvas = createCanvas(550, 550);
     canvas.position(560, 150);
-    
+
     poseNet = ml5.poseNet(video, modelLoaded);
     poseNet.on('pose', gotPoses);
 }
 
-function modelLoaded()
-{
+function modelLoaded() {
     console.log('PoseNet Is Initialized!!');
 }
 
-function gotPoses(results)
-{
-    if(results.length > 0)
-    {
+function gotPoses(results) {
+    if (results.length > 0) {
         console.log(results);
         noseX = results[0].pose.nose.x;
         noseY = results[0].pose.nose.y;
@@ -38,9 +34,8 @@ function gotPoses(results)
     }
 }
 
-function draw()
-{
-    document.getElementById("text_size").innerHTML = "Width & Height of text is = " + difference + "px";
+function draw() {
+    background('#655d67');
     textsize(10);
     fill('#d6cfff');
     text('Lavya', noseX, noseY);
